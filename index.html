@@ -19,10 +19,11 @@
       position:relative;
     }
     h1,h2,p { color:white; text-shadow:2px 2px 8px rgba(0,0,0,0.5); opacity:0; position:absolute; transition: opacity 1s ease-in-out; }
-    #intro { font-size:3rem; }
-    #poem { font-size:1.5rem; max-width:80%; line-height:1.8; padding:0 20px; }
-    #quote { font-size:1.6rem; max-width:80%; line-height:1.8; padding:0 20px; }
-    #birthday { font-size:2.8rem; font-weight:bold; }
+    #intro { font-size:3rem; top: 20%; }
+    #poem { font-size:1.5rem; max-width:80%; line-height:1.8; padding:0 20px; top: 30%; }
+    #quote { font-size:1.6rem; max-width:80%; line-height:1.8; padding:0 20px; top: 30%; }
+    #birthday { font-size:2.8rem; font-weight:bold; position:absolute; top:50%; transform:translateY(-50%); }
+    #finalHeart { font-size:4rem; color:red; text-shadow: 2px 2px 12px black; opacity:0; transition: opacity 2s ease-in-out; position:absolute; bottom:20%; }
     .emoji { position:absolute; animation:floatUp 6s linear infinite; opacity:0.8; z-index:0; }
     @keyframes floatUp {
       0% { transform: translateY(100vh) rotate(0deg); opacity:1; }
@@ -30,7 +31,6 @@
     }
     #date { position:absolute; top:10px; left:10px; color:white; font-weight:bold; font-size:1rem; }
     #signature { position:absolute; bottom:10px; right:10px; color:white; font-weight:bold; font-size:1rem; }
-    #finalHeart { font-size:4rem; color:red; text-shadow: 2px 2px 12px black; opacity:0; transition: opacity 2s ease-in-out; position:absolute; bottom:40%; }
   </style>
 </head>
 <body>
@@ -66,9 +66,9 @@
 
   <h1 id="finalHeart">I Love You Nashad Noor Yussuf Dinni ❤️</h1>
 
-  <!-- Online-hosted music -->
+  <!-- Music -->
   <audio id="bgMusic" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <source src="https://example.com/yeh-raatein-yeh-mausam.mp3" type="audio/mpeg">
   </audio>
 
   <script>
@@ -78,18 +78,18 @@
     const birthday = document.getElementById("birthday");
     const finalHeart = document.getElementById("finalHeart");
 
-    // Sequence animations
+    // Animation sequence
     setTimeout(() => { intro.style.opacity = 1; }, 500);
-    setTimeout(() => { intro.style.opacity = 0; }, 3500);
+    setTimeout(() => { intro.style.opacity = 0; }, 4000);
 
-    setTimeout(() => { poem.style.opacity = 1; }, 4000);
-    setTimeout(() => { poem.style.opacity = 0; }, 14000);
+    setTimeout(() => { poem.style.opacity = 1; }, 4500);
+    setTimeout(() => { poem.style.opacity = 0; }, 14500);
 
-    setTimeout(() => { quote.style.opacity = 1; }, 14500);
+    setTimeout(() => { quote.style.opacity = 1; }, 15000);
     setTimeout(() => { quote.style.opacity = 0; }, 21500);
 
     setTimeout(() => { birthday.style.opacity = 1; startFloatingEmojis(); }, 22000);
-    setTimeout(() => { finalHeart.style.opacity = 1; }, 26000);
+    setTimeout(() => { finalHeart.style.opacity = 1; }, 27000);
 
     // Floating emojis
     const emojis = ['❤️','😘','🎂','🎉','💖','✨'];
@@ -106,13 +106,13 @@
       }, 300);
     }
 
-    // Click to play music
+    // Play music on click
     document.body.addEventListener('click', () => {
       const music = document.getElementById('bgMusic');
       music.play();
     }, { once: true });
 
-    // Click for extra hearts
+    // Extra hearts on click
     document.body.addEventListener('click', () => {
       for(let i=0;i<5;i++){
         const emoji = document.createElement('div');
