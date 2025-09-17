@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Nashu ❤️</title>
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {background:linear-gradient(to right, #ffdde1, #ee9ca7);
+          overflow:hidden; height:100vh; display:flex; justify-content:center;
+          align-items:center; flex-direction:column; font-family:'Comic Sans MS', cursive;
+          text-align:center; position:relative;}
+    #date{position:absolute;top:10px;left:15px;font-size:1rem;color:white;text-shadow:1px 1px 4px rgba(0,0,0,0.6); z-index:20;}
+    #signature{position:absolute;bottom:10px;right:15px;font-size:1rem;color:white;text-shadow:1px 1px 4px rgba(0,0,0,0.6); z-index:20;}
+    h1,h2,p{color:white;text-shadow:2px 2px 8px rgba(0,0,0,0.5);opacity:0; position:absolute; transition:opacity 1s ease-in-out; max-width:90%;}
+    #intro{font-size:3rem;}
+    #poem{font-size:1.3rem; line-height:1.8; padding:0 20px;}
+    #quote{font-size:1.6rem; max-width:80%; line-height:1.8; padding:0 20px;}
+    #birthday{font-size:2.8rem; font-weight:bold;}
+    #finalLove{font-size:2.5rem; color:#ff3366; font-weight:bold; text-shadow:0 0 20px #fff,0 0 30px #ff3366;}
+    #bigHeart{position:absolute;font-size:10rem;color:#ff3366;opacity:0; animation:pulse 1.5s infinite ease-in-out; z-index:0;}
+    @keyframes pulse {0%{transform:scale(1);opacity:0.3;}50%{transform:scale(1.1);opacity:0.6;}100%{transform:scale(1);opacity:0.3;}}
+    .emoji{position:absolute;animation:floatUp 6s linear infinite;opacity:0.8; z-index:0;}
+    @keyframes floatUp {0%{transform:translateY(100vh) rotate(0deg);opacity:1;}100%{transform:translateY(-10vh) rotate(360deg);opacity:0;}}
+  </style>
+</head>
+<body>
+  <div id="date">20-September-2025</div>
+  <div id="signature">my dear coco ❤️</div>
+  <h1 id="intro">My dear cuore mio ❤️</h1>
+  <p id="poem">
+    My love, my love, how can one be so divine?<br>
+    I see your beauty in your soul, in your eyes, they shine.<br>
+    My heart yearns for you, my mind stays caught,<br>
+    In every fleeting thought, you are all I've sought.<br><br>
+    Do you think of me, when stars fill the night?<br>
+    Or when you dive deep, in the ocean's quiet light?<br>
+    I think of you, as my eyes close to sleep,<br>
+    In every passing face, it's your image I keep.<br><br>
+    Give me your hand, let me calm your mind,<br>
+    In your sorrow, a solace you'll find.<br>
+    Give me your sorrows and bitterness,<br>
+    I'll hold you in my prayers, until your pain finds rest.
+  </p>
+  <p id="quote">
+    I will love you as long as the sun burns in the sky,<br>
+    as long as the moon shines its light into the dark night,<br>
+    until the raging blue oceans become calm and run dry.<br><br>
+    I will love you until the end of time.
+  </p>
+  <h2 id="birthday">🎉 Happy Birthday Nashu ❤️ my sweet heart ❤️ 🎂</h2>
+  <div id="bigHeart">❤️</div>
+  <h2 id="finalLove">I Love You Nashad Noor Yussuf Dinni ❤️</h2>
+  <script>
+    const intro=document.getElementById("intro");
+    const poem=document.getElementById("poem");
+    const quote=document.getElementById("quote");
+    const birthday=document.getElementById("birthday");
+    const finalLove=document.getElementById("finalLove");
+    const bigHeart=document.getElementById("bigHeart");
+    setTimeout(()=>intro.style.opacity=1,500);
+    setTimeout(()=>intro.style.opacity=0,4000);
+    setTimeout(()=>poem.style.opacity=1,5000);
+    setTimeout(()=>poem.style.opacity=0,13000);
+    setTimeout(()=>quote.style.opacity=1,14000);
+    setTimeout(()=>quote.style.opacity=0,20000);
+    setTimeout(()=>birthday.style.opacity=1,21000);
+    setTimeout(()=>birthday.style.opacity=0,27000);
+    setTimeout(()=>{finalLove.style.opacity=1; bigHeart.style.opacity=0.4;},28000);
+    const emojis=['❤️','😘','🎂','🎉','💋','🎈'];
+    function startFloatingEmojis(){setInterval(()=>{const e=document.createElement('div'); e.classList.add('emoji');
+    e.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    e.style.left=Math.random()*window.innerWidth+'px';
+    e.style.fontSize=Math.random()*25+20+'px';
+    e.style.animationDuration=(Math.random()*3+4)+'s'; document.body.appendChild(e);
+    setTimeout(()=>e.remove(),7000);},250);}
+    startFloatingEmojis();
+  </script>
+</body>
+</html>
