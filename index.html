@@ -5,53 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday Nashu ❤️</title>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       background: linear-gradient(to right, #ffdde1, #ee9ca7);
       overflow: hidden;
       height: 100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-direction:column;
-      font-family:'Comic Sans MS', cursive;
-      text-align:center;
-      position:relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      position: relative;
     }
 
-    h1,h2,p { 
-      color:white; 
-      text-shadow:2px 2px 8px rgba(0,0,0,0.5); 
-      opacity:0; 
-      position:absolute; 
-      transition: opacity 1s ease-in-out; 
+    /* Top left date */
+    #date {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      font-size: 1rem;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      z-index: 20;
     }
 
-    #intro { font-size:3rem; top: 15%; }
-    #poem { font-size:1.5rem; max-width:80%; line-height:1.8; padding:0 20px; top: 25%; }
-    #quote { font-size:1.6rem; max-width:80%; line-height:1.8; padding:0 20px; top: 25%; }
-    #birthday { font-size:2.8rem; font-weight:bold; top:55%; transform:translateY(-50%); }
-    #finalHeart { font-size:4rem; color:red; text-shadow: 2px 2px 12px black; opacity:0; transition: opacity 2s ease-in-out; position:absolute; bottom:20%; }
-    
-    .emoji { position:absolute; animation:floatUp 6s linear infinite; opacity:0.8; z-index:0; }
+    /* Bottom right signature */
+    #signature {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 1rem;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      z-index: 20;
+    }
+
+    h1, h2, p {
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+      opacity: 0;
+      position: absolute;
+      transition: opacity 1s ease-in-out;
+      max-width: 90%;
+    }
+
+    /* Text Styling */
+    #intro {
+      font-size: 3rem;
+    }
+
+    #poem {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      padding: 0 20px;
+    }
+
+    #quote {
+      font-size: 1.6rem;
+      max-width: 80%;
+      line-height: 1.8;
+      padding: 0 20px;
+    }
+
+    #birthday {
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+
+    #finalLove {
+      font-size: 2.5rem;
+      color: #ff3366;
+      font-weight: bold;
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff3366;
+    }
+
+    /* Big glowing heart */
+    #bigHeart {
+      position: absolute;
+      font-size: 10rem;
+      color: #ff3366;
+      opacity: 0;
+      animation: pulse 1.5s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.1); opacity: 0.6; }
+      100% { transform: scale(1); opacity: 0.3; }
+    }
+
+    /* Floating emojis animation */
+    .emoji {
+      position: absolute;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+      z-index: 0;
+    }
 
     @keyframes floatUp {
-      0% { transform: translateY(100vh) rotate(0deg); opacity:1; }
-      100% { transform: translateY(-10vh) rotate(360deg); opacity:0; }
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
     }
-
-    #date { position:absolute; top:10px; left:10px; color:white; font-weight:bold; font-size:1rem; }
-    #signature { position:absolute; bottom:10px; right:10px; color:white; font-weight:bold; font-size:1rem; }
-
   </style>
 </head>
 <body>
 
+  <!-- Mandatory Date and Signature -->
   <div id="date">20-September-2025</div>
   <div id="signature">my dear coco ❤️</div>
 
+  <!-- Step 1: Opening Greeting -->
   <h1 id="intro">My dear cuore mio ❤️</h1>
 
+  <!-- Step 2: Poem -->
   <p id="poem">
     My love, my love, how can one be so divine?<br>
     I see your beauty in your soul, in your eyes, they shine.<br>
@@ -67,6 +140,7 @@
     I'll hold you in my prayers, until your pain finds rest.
   </p>
 
+  <!-- Step 3: Love Quote -->
   <p id="quote">
     I will love you as long as the sun burns in the sky,<br>
     as long as the moon shines its light into the dark night,<br>
@@ -74,69 +148,62 @@
     I will love you until the end of time.
   </p>
 
+  <!-- Step 4: Final Birthday Message -->
   <h2 id="birthday">🎉 Happy Birthday Nashu ❤️ my sweet heart ❤️ 🎂</h2>
 
-  <h1 id="finalHeart">I Love You Nashad Noor Yussuf Dinni ❤️</h1>
-
-  <audio id="bgMusic" loop>
-    <source src="song.mp3" type="audio/mpeg">
-  </audio>
+  <!-- Step 5: Grand Finale -->
+  <div id="bigHeart">❤️</div>
+  <h2 id="finalLove">I Love You Nashad Noor Yussuf Dinni ❤️</h2>
 
   <script>
     const intro = document.getElementById("intro");
     const poem = document.getElementById("poem");
     const quote = document.getElementById("quote");
     const birthday = document.getElementById("birthday");
-    const finalHeart = document.getElementById("finalHeart");
+    const finalLove = document.getElementById("finalLove");
+    const bigHeart = document.getElementById("bigHeart");
 
-    // Sequence animations
-    setTimeout(() => { intro.style.opacity = 1; }, 500);
-    setTimeout(() => { intro.style.opacity = 0; }, 4000);
+    // --- Slide Timings ---
+    // Step 1: Intro (0 - 4 sec)
+    setTimeout(() => intro.style.opacity = 1, 500);
+    setTimeout(() => intro.style.opacity = 0, 4000);
 
-    setTimeout(() => { poem.style.opacity = 1; }, 4500);
-    setTimeout(() => { poem.style.opacity = 0; }, 14500);
+    // Step 2: Poem (5 - 13 sec)
+    setTimeout(() => poem.style.opacity = 1, 5000);
+    setTimeout(() => poem.style.opacity = 0, 13000);
 
-    setTimeout(() => { quote.style.opacity = 1; }, 15000);
-    setTimeout(() => { quote.style.opacity = 0; }, 21500);
+    // Step 3: Love Quote (14 - 20 sec)
+    setTimeout(() => quote.style.opacity = 1, 14000);
+    setTimeout(() => quote.style.opacity = 0, 20000);
 
-    setTimeout(() => { birthday.style.opacity = 1; startFloatingEmojis(); }, 22000);
-    setTimeout(() => { finalHeart.style.opacity = 1; }, 27000);
+    // Step 4: Birthday Message (21 - 27 sec)
+    setTimeout(() => birthday.style.opacity = 1, 21000);
+    setTimeout(() => birthday.style.opacity = 0, 27000);
 
-    // Floating emojis
-    const emojis = ['❤️','😘','🎂','🎉','💖','✨'];
+    // Step 5: Grand Finale (28 sec onwards)
+    setTimeout(() => {
+      finalLove.style.opacity = 1;
+      bigHeart.style.opacity = 0.4;
+    }, 28000);
+
+    // --- Floating Emojis ---
+    const emojis = ['❤️','😘','🎂','🎉','💋','🎈'];
     function startFloatingEmojis() {
       setInterval(() => {
         const emoji = document.createElement('div');
         emoji.classList.add('emoji');
-        emoji.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-        emoji.style.left = Math.random()*window.innerWidth+'px';
-        emoji.style.fontSize = Math.random()*25+20+'px';
-        emoji.style.animationDuration = (Math.random()*3+4)+'s';
+        emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        emoji.style.left = Math.random() * window.innerWidth + 'px';
+        emoji.style.fontSize = Math.random() * 25 + 20 + 'px';
+        emoji.style.animationDuration = (Math.random() * 3 + 4) + 's';
         document.body.appendChild(emoji);
-        setTimeout(()=>{ emoji.remove(); },7000);
-      }, 300);
+
+        setTimeout(() => emoji.remove(), 7000);
+      }, 250);
     }
 
-    // Play music on click
-    document.body.addEventListener('click', () => {
-      const music = document.getElementById('bgMusic');
-      music.play();
-    }, { once: true });
-
-    // Extra hearts on click
-    document.body.addEventListener('click', () => {
-      for(let i=0;i<5;i++){
-        const emoji = document.createElement('div');
-        emoji.classList.add('emoji');
-        emoji.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-        emoji.style.left = Math.random()*window.innerWidth+'px';
-        emoji.style.fontSize = Math.random()*25+20+'px';
-        emoji.style.animationDuration = (Math.random()*3+3)+'s';
-        document.body.appendChild(emoji);
-        setTimeout(()=>{ emoji.remove(); },7000);
-      }
-    });
-
+    startFloatingEmojis();
   </script>
+
 </body>
 </html>
