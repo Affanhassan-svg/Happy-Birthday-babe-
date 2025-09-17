@@ -18,19 +18,31 @@
       text-align:center;
       position:relative;
     }
-    h1,h2,p { color:white; text-shadow:2px 2px 8px rgba(0,0,0,0.5); opacity:0; position:absolute; transition: opacity 1s ease-in-out; }
-    #intro { font-size:3rem; top: 20%; }
-    #poem { font-size:1.5rem; max-width:80%; line-height:1.8; padding:0 20px; top: 30%; }
-    #quote { font-size:1.6rem; max-width:80%; line-height:1.8; padding:0 20px; top: 30%; }
-    #birthday { font-size:2.8rem; font-weight:bold; position:absolute; top:50%; transform:translateY(-50%); }
+
+    h1,h2,p { 
+      color:white; 
+      text-shadow:2px 2px 8px rgba(0,0,0,0.5); 
+      opacity:0; 
+      position:absolute; 
+      transition: opacity 1s ease-in-out; 
+    }
+
+    #intro { font-size:3rem; top: 15%; }
+    #poem { font-size:1.5rem; max-width:80%; line-height:1.8; padding:0 20px; top: 25%; }
+    #quote { font-size:1.6rem; max-width:80%; line-height:1.8; padding:0 20px; top: 25%; }
+    #birthday { font-size:2.8rem; font-weight:bold; top:55%; transform:translateY(-50%); }
     #finalHeart { font-size:4rem; color:red; text-shadow: 2px 2px 12px black; opacity:0; transition: opacity 2s ease-in-out; position:absolute; bottom:20%; }
+    
     .emoji { position:absolute; animation:floatUp 6s linear infinite; opacity:0.8; z-index:0; }
+
     @keyframes floatUp {
       0% { transform: translateY(100vh) rotate(0deg); opacity:1; }
       100% { transform: translateY(-10vh) rotate(360deg); opacity:0; }
     }
+
     #date { position:absolute; top:10px; left:10px; color:white; font-weight:bold; font-size:1rem; }
     #signature { position:absolute; bottom:10px; right:10px; color:white; font-weight:bold; font-size:1rem; }
+
   </style>
 </head>
 <body>
@@ -66,9 +78,8 @@
 
   <h1 id="finalHeart">I Love You Nashad Noor Yussuf Dinni ❤️</h1>
 
-  <!-- Music -->
   <audio id="bgMusic" loop>
-    <source src="https://example.com/yeh-raatein-yeh-mausam.mp3" type="audio/mpeg">
+    <source src="song.mp3" type="audio/mpeg">
   </audio>
 
   <script>
@@ -78,7 +89,7 @@
     const birthday = document.getElementById("birthday");
     const finalHeart = document.getElementById("finalHeart");
 
-    // Animation sequence
+    // Sequence animations
     setTimeout(() => { intro.style.opacity = 1; }, 500);
     setTimeout(() => { intro.style.opacity = 0; }, 4000);
 
@@ -125,6 +136,7 @@
         setTimeout(()=>{ emoji.remove(); },7000);
       }
     });
+
   </script>
 </body>
 </html>
